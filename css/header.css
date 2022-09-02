@@ -1,0 +1,114 @@
+
+/* header : wrap */
+.header{
+    background-color: white;
+    width: 100%;
+
+    /* 3px 검은색 블러 */
+    box-shadow: 0 0 3px #000; 
+    z-index: 20;
+
+    /* 뷰포트기준 */
+    position: fixed; 
+    top:0;
+    left:0;
+}
+
+.header>.header_wrapper{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1.2rem;
+}
+
+/* header_start */
+.header_hamburgerbar{
+    border:none;
+    background-color : white;
+    font-size:1.5rem;
+}
+
+.header_title{
+    position: relative;
+    font-size:1.5rem;
+    margin-left: 0.2rem;
+    font-weight: bold;
+}
+
+.header_mini_title{
+    position: absolute;
+    font-size: 10px;
+    left: 95px;
+    top:0;
+    color:gray;
+}
+
+/* header center */
+.header_center{
+    width: 50%;
+    background-color: beige;
+}
+
+.header_form{
+    display:flex;
+    max-width: 100%;
+}
+
+.header_input_text{
+    /* 자신이 속한 부모범위의 100%사용 - 버튼 크기 => 버튼크기 제외한 나머지 부모영역 모두 사용 */
+    width: calc(100% - 60px);
+    height: 30px;
+    padding: 0 10px;
+    border : 1px solid black;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+.header_input_btn{
+    width: 60px;
+    border : 1px solid black;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* header end */
+.header_end{
+    display:flex;
+}
+
+.header_search{
+    display:none;
+    margin-right:5px;
+    border:none;
+    background-color: white;
+    font-size:1.2rem;
+}
+
+.header_profile{
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    background-image: url("../img/3.jpg");
+    background-size: cover;
+}
+
+@media screen and (max-width: 768px){
+    .header_title{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .header_center .header_mini_title{
+        display: none;
+    }
+
+    .header_search{
+        display: block;
+    }
+}
