@@ -1,0 +1,73 @@
+css 함수: 괄호 안에 인수 전달 시, 인수에 따른 결과값을 속성에 적용하는 방식으로 동작
+ - calc()는 계산을 담당하는 함수로, 계산식의 결과를 속성값으로 지정할수 있다.
+ - calc()는 괄호 안에 표현식 하나를 받고, 표현식의 겨로가가 최종 값이 된다.
+
+예제)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box; 
+            /*패딜값을 아래에서 주면, 총 너비/높이가 초과됨. 
+            그렇기에 영역계산시 border와 내부 여백값까지 
+            포함해서 width값을 산출하는 방법사용*/
+        }
+        
+        .message{
+            background-color: antiquewhite;
+            display:flex;
+            justify-content: space-around;
+            margin:10px;
+            padding:0.5em; /* 24/12=12 px*/
+            font-size: 1.5em; /*16*1.5=24px*/
+            align-items:center;
+            height:100px;
+            border: 1px solid black;
+        }
+
+        .message_text{
+            /* 100px를 뺀 나머지 영역이 text-area영역이됨 */
+            width: calc( 100% - 100px ); 
+            
+            /* 
+            - width:80%; 
+            - width를 area 80%, btn 100px를 주면, 화면 너비에 따라 %가 달라지기때문에 의도치않은 공백이 발생할 수 있음.
+            이를 방지하기 위해 위처럼 calc사용
+            */
+            height: 100%;
+            border:none;
+            resize: none; 
+            /* 텍스트 area의 늘이기 기능이 사라짐 */
+        }
+
+        .message_text:focus{
+            outline: none; /*텍스트 박스 클릭 시 생기는 박스 영역*/
+        }
+        
+        .message_btn{
+            width: 100px;
+            height: 100%;
+            background-color: aqua;
+            border:none;
+            border-radius: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="message">
+        <textarea class="message_text">
+        </textarea>
+        <button class="message_btn">전송</button>
+    </div>
+</body>
+</html>

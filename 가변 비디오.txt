@@ -1,0 +1,46 @@
+1. 가변 이미지처럼 사용 가능
+
+2. 유튜프 퍼오기처럼 불러온 비디오는, 실제 콘텐츠크기가 가변적으로 움직이지 않는다는 단점 존재.
+  - iframe만 적용
+  - 해결방법은 종횡비를 이용하는 것
+
+  1) 불러온 영상의 height/width값인 종횡비 구함
+  2) 비디오를 감싸는 div태그 생성
+  3) padding-top에 종횡비 설정
+  4) position:relative 설정
+  5) 비디오 요소에 absolute부여 후, top과 left = 0으로 맞춤
+
+    </style>
+
+        .player{
+            /* 종횡비 : 여백 크기를 구하는 단서 (315/560 = 0.5625) */
+            padding-top:56.25%;
+            position: relative;
+
+        }
+
+        
+        iframe{
+            /* 유튜브로부터 퍼온 (다른곳으로부터 임베드한) 영상크기는 컨텐츠 크기가 아니라, 
+            iframe자체로만 결정됨  */
+            /* width: 100%; */
+
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+        }
+
+       
+    </style>
+
+
+<body>
+    <!-- 기본적으로 video 태그를 사용하는 방법 -->
+    <!-- <video src="./vid.mp4" controls></video>  -->
+    <div class="player">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BYMM5Dh_tSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+</body>

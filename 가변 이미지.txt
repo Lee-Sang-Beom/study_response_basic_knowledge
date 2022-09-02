@@ -1,0 +1,43 @@
+1. 가변 이미지 사용
+- max-width: 너비 최대값을 지정해 요소의 너비가 그 이상 커지지 않게함
+- min-width: 너비 최소값을 지정해 요소의 너비가 그 이상 작아지지 않게함
+
+ex1)
+
+img{        
+    width: 100%; // 이미지를 100%로
+    max-width: 300px; // 단, 너비가 더 커져도 이미지의 최대크기는 300px
+}
+
+img {
+            width:400px; // 너비가 넓을때는 400이 최대
+            max-width: 60%; // 하지만 점점좁아질때 부모요소의 최대 60%너비 가지게 유지
+}
+
+ex2)
+
+        div{
+            /* 너비가 부모의 절반 : body의 절반 */
+            width: 50%; 
+            background-color: beige;
+        }
+        img {
+            /*최대가 100%이므로, 이미지 크기는 계속 유동적으로 body의 50%를 넘지않음*/
+            max-width: 100%;
+        }
+
+
+2. picture 태그
+ - 기본적으로 보여줄 이미지 1개 선택 (img 태그 사용)
+ - 조건이 추가될때마다 보여줄 이미지 추가 (source 태그 사용)
+ - 해상도 별로 이미지를 다르게 보여줄 때 사용
+
+ex)
+    <picture>
+    /*
+        srcset : media=""에서 특정 조건 만족 시 보여줄 이미지
+        media : 해당 조건 만족시, source의 srcset이 가진 이미지 출력
+    */
+        <source srcset="/satal.jpg" media="(min-width: 800px">
+        <img src="/백야.jpg">
+    </picture>

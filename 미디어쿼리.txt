@@ -1,0 +1,65 @@
+1. 미디어 쿼리
+
+@media 미디어타입 and (조건에 대한 물음) {
+
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+- min-width(n px): screen이 n px 이상일 때 내부요소 적용
+- max-width(n px) : screen이  n px 이하로 들어왔을 때 내부요소 적용 
+
+
+
+2. 예제)
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            /*패딜값을 아래에서 주면, 총 너비/높이가 초과됨. 
+            그렇기에 영역계산시 border와 내부 여백값까지 
+            포함해서 width값을 산출하는 방법사용*/
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        @media screen and (max-width: 1024px){
+            img{
+                width: 300px;
+                height: 600px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            img {
+                width: 100px;
+                height: 200px;
+            }
+        }
+
+       
+
+    </style>
+</head>
+
+<body>
+    <img src="./백야.jpg" />
+</body>
+
+</html>
