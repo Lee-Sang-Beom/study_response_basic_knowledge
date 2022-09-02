@@ -6,52 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="css/reset.css" rel="stylesheet">
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            /*패딜값을 아래에서 주면, 총 너비/높이가 초과됨. 
-            그렇기에 영역계산시 border와 내부 여백값까지 
-            포함해서 width값을 산출하는 방법사용*/
-        }
-
-        video{ 
-            /* 이미지 처럼 가변적사용 가능 */
-            width: 60%;
-        }
-
-        .player{
-            /* 종횡비 : 여백 크기를 구하는 단서 (315/560 = 0.5625) */
-            padding-top:56.25%;
-            position: relative;
-
-        }
-
-        
-        iframe{
-            /* 유튜브로부터 퍼온 (다른곳으로부터 임베드한) 영상크기는 컨텐츠 크기가 아니라, 
-            iframe자체로만 결정됨  */
-            /* width: 100%; */
-
-            position: absolute;
-            top:0;
-            left:0;
-            width: 100%;
-            height: 100%;
-        
-        }
 
        
     </style>
 </head>
 
 <body>
-    <!-- 기본적으로 video 태그를 사용하는 방법 -->
-    <!-- <video src="./vid.mp4" controls></video>  -->
-    <div class="player">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/BYMM5Dh_tSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    
     
 </body>
 
