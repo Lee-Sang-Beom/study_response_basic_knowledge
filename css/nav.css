@@ -1,0 +1,66 @@
+.nav{
+    /* fixed: viewport 위치 고정 */
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+}
+
+.nav_wrapper{
+    /* 아무리 작아도 150px x 100vh */
+    min-width: 150px;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+
+    /* header에 가리는 영역 밑으로 요소들이 나오게끔 content-box위 여백을줌 */
+    padding-top:80px;
+}
+
+.nav .nav_wrapper li{
+    display: flex;
+    padding: 5px 0 5px 20px;
+
+}
+
+.nav .nav_wrapper li:hover{
+    background-color: #eaeaea;
+    /* transition: all 0.5s ease-in; */
+}
+
+.nav_icon{
+    border:none;
+    background-color: transparent;
+    font-size:1.5rem;
+}
+
+.nav_menu{
+    margin-left:5px;
+    font-size:1.2rem;
+    border:none;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .nav_menu{
+        display: none;
+    }
+    
+    .nav_wrapper{
+        min-width:0;
+    }
+
+    .nav .nav_wrapper li{
+        padding: 0 10px;
+    
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .nav{
+        display: none;
+    }
+    
+    
+    
+}

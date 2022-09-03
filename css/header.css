@@ -6,9 +6,9 @@
 
     /* 3px 검은색 블러 */
     box-shadow: 0 0 3px #000; 
-    z-index: 20;
+    z-index: 2;
 
-    /* 뷰포트기준 */
+    /* 뷰포트 기준 */
     position: fixed; 
     top:0;
     left:0;
