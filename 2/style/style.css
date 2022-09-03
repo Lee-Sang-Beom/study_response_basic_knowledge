@@ -1,1 +1,48 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  background-color: #efefef;
+}
+
+.container {
+  position: relative;
+  top: 20px;
+  width: 960px;
+  min-width: 50%;
+  margin: 0 auto;
+  background-color: purple;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.container .cover {
+  background-color: orange;
+  float: left;
+  width: 60%;
+}
+.container .cover img {
+  width: 100%;
+  vertical-align: top;
+}
+.container .contents {
+  float: left;
+  width: 40%;
+  align-items: center;
+  text-align: center;
+}
+.container .contents span {
+  margin: 5px 0;
+  font-size: 0.75rem;
+  color: rgb(196, 196, 196);
+}
+.container .contents h1 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.container .contents p {
+  font-size: 0.8rem;
+  padding: 1rem;
+  opacity: 0.7;
+  letter-spacing: 0.1px;
+}/*# sourceMappingURL=style.css.map */
