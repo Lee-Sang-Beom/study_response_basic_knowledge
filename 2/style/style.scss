@@ -3,14 +3,15 @@ body{
  background-color: #efefef;
 }
 
-$container-width: 960px;
-$half-width : 50%;
+$container-max-width: 960px; 
+$min-width : 25%;
 
 .container{
     position: relative;
     top:20px;
-    width: $container-width;
-    min-width: $half-width;
+
+    // max-width는 최대 크기를 지정. 부여크기보다 작아질 수 있기에 많이 쓰임
+    max-width: $container-max-width;
     margin:0 auto;
     background-color: purple;
     color: white;
@@ -32,6 +33,7 @@ $half-width : 50%;
 
             // https://mygumi.tistory.com/368 : 이미지 아래가 비는 상황 발생 => vertical-align은 inline요소 간 세로 정렬을 위해 사용
             vertical-align: top;
+            
         }
     }
     
@@ -40,6 +42,7 @@ $half-width : 50%;
         width: 40%;
         align-items: center;
         text-align: center;
+        font-family: inherit;
         
 
         span{
@@ -67,3 +70,48 @@ $half-width : 50%;
 }
 
 
+@media screen and (max-width:960px) {
+    
+    .container{
+        flex-direction: column;
+
+        .cover{
+            position: relative;
+            float: none;
+            width: 100%;
+
+        }
+
+        .contents{
+            position: absolute;
+            bottom:0;
+            right:0;
+            background-color: purple;
+            float:none;
+            width: 60%;
+            padding: 1px 0;
+            z-index:10;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            text-align: right;
+
+            span{
+                display: block;
+                margin-top: 10px;
+                font-size: 0.75rem;
+                color:rgb(196, 196, 196);
+            }
+
+            p{
+                margin-right :0;
+                padding-right: 0;
+            }
+
+            h1{
+                margin-right :0;
+            }
+        }
+    }
+
+}
