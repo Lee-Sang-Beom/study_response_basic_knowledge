@@ -1,0 +1,99 @@
+.thumbs_wrapper{
+    padding-top: 20px; 
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap:wrap;
+
+    /* header, nav의 fixed로 가려지는 부분에서 탈출 */
+    margin: 60px 0 0 150px;
+    background-color: inherit;
+}
+
+.thumb_item{
+    width: calc(25% - 5px);
+    margin-right: 5px;
+    padding: 0 20px;
+  
+}
+
+.thumbs_thumbnail{
+    /* 자신이 속한 부모영역에서 벗어나지 못함 */
+    max-width: 100%;
+    margin-bottom: 10px;
+
+    /* 이미지 위치 확인용 border 값 */
+    /* border:1px solid black; */
+}
+
+.thumbs_info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+    letter-spacing: 1px;
+    
+}
+
+.thumbs_profile{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url('../img/2.jpg');
+    background-size: cover;
+    margin-right: 15px;
+    margin-left: 5px;
+    
+}
+
+.thumbs_text{
+    /* 부모인 .thumb_info너비에서 profile사진 영역을 제외한 나머지가 너비 */
+    width : calc(100% - 36px);
+}
+
+.thumbs_text_title{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom : 5px;
+}
+
+.thumbs_text_ownder{
+    font-size: 1rem;
+    margin-bottom : 5px;
+    color: rgb(10,10,0);
+}
+
+.thumbs_text_anal{
+    font-size:0.8rem;
+}
+
+@media screen and (max-width:1280px) {
+    .thumb_item{
+        width: calc(33.33% - 5px);
+      
+    }
+}
+
+@media screen and (max-width:768px) {
+    .thumb_item{
+        width: calc(50% - 5px);
+    }
+
+    .thumbs_wrapper{
+        /* nav 너비 축소에 따른 썸네일 영역 변경 */
+        margin: 60px 0 0 50px;
+
+    }
+}
+
+@media screen and (max-width:500px) {
+    .thumb_item{
+        width: calc(100%);
+        margin-right: 0;
+      
+    }
+
+    .thumbs_wrapper{
+        /* nav 제거에 따른 썸네일 영역 변경 */
+        margin: 60px 0 0 0;
+    }
+}
