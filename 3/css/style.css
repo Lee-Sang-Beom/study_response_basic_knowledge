@@ -1,0 +1,60 @@
+@charset "UTF-8";
+body {
+  background-color: #111;
+  color: #999;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .team .team-item {
+  flex-basis: 30%;
+  flex-shrink: 0;
+  margin: 0 10px;
+  transition: all 0.4s;
+}
+.wrapper .team .team-item img {
+  width: 100%;
+}
+.wrapper .team .team-item .profile {
+  background-color: #222;
+  position: relative;
+}
+.wrapper .team .team-item .profile-contents {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  color: white;
+}
+.wrapper .team .team-item .profile-contents h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.wrapper .team .team-item .profile-contents h2 span {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.wrapper .team .team-item .profile-contents p {
+  display: none;
+}
+.wrapper .team .team-item:hover {
+  /* 
+  flex-item너비가 40%가 되면서, 높이가 애니메이션이 발생하면,
+   어색한 연출이 발생될 수 있음.
+
+  이유는, teamitem의 부모인 team에서 team-item각각에 대해 
+   세로정렬하는 것을 넣어주지 않으면, 나머지 이미지가 세로축 가운데로 이동해주지 않기때문
+  */
+  flex-basis: 40%;
+  margin: 0 50px;
+}/*# sourceMappingURL=style.css.map */
