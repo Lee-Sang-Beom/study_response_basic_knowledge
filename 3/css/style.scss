@@ -1,27 +1,28 @@
-body{
+body {
 	background-color: #111;
-	color:#999;
+	color: #999;
 }
 
-.wrapper{
+.wrapper {
 
 	// height:auto > wrapper안에 담겨져있는 내용물만큼의 높이만 차지
 	height: 100vh;
 
 	display: flex;
 	justify-content: center;
-	align-items:center;
+	align-items: center;
 
-	.team{
-		display:flex;
+	.team {
+		display: flex;
 		justify-content: center;
 		// background-color: #999;
-		align-items:center;
-		.team-item{
+		align-items: center;
+		padding: 0 2vw;
 
+		.team-item {
 			// flex-basis : flex-item의 기본 너비 지정
 			// 내부 img크기때문에 원하는 값으로 줄어들지 않는다면, 내부 이미지 너비를 부모요소의 100%만큼 차지하게 함
-			flex-basis:30%;
+			flex-basis: 30%;
 
 			// 애니메이션 발생으로, 자동으로 아이템 너비가 축소되지 않도록 함
 			flex-shrink: 0;
@@ -29,43 +30,95 @@ body{
 
 			// 애니메이션 효과: 모든 종류의 속성에 .4s 적용
 			transition: all 0.4s;
-			
-			img{
-				width:100%;
+
+			img {
+				width: 100%;
 			}
 
-			.profile{
+			.profile {
 				background-color: #222;
-				position:relative;
+				position: relative;
 			}
 
-			.profile-contents{
+			.profile:before {
+				content: '';
+
+				// 그라데이션 효과 : https://www.colorzilla.com/gradient-editor/
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+				background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+				/* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+				/* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+				/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+				/* IE6-9 */
+
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				height: 180px;
+
+
+
+			}
+
+			.profile_red {
+				color: rgb(255, 70, 70);
+			}
+
+			.profile_green {
+				color: green;
+			}
+
+			.profile_purple {
+				color: violet;
+			}
+
+			.profile-contents {
 
 				// 공간을 차지하지않고, 위로 뜨게
-				position:absolute;
-				left:0;
-				bottom:0;
+				position: absolute;
+				left: 0;
+				bottom: 0;
 				padding: 10px;
-				color: white;
+				min-width: 100%;
 
-				h2{
+				h2 {
 					font-size: 1.6rem;
 					font-weight: 800;
 
-					span{
+					span {
 						display: block;
 						font-size: 1rem;
 						font-weight: normal;
 					}
 				}
-				p{
-					display: none;
+
+				p {
+					// display: none;
+					color: white;
+					font-size: 12px;
+					min-width: 100%;
+
+					// p태그 높이를 0으로하고, overflow처리로 안보이게함
+					max-height: 0;
+					overflow:hidden;
+					line-height: 1.2;
+					transition: all .8s;
+					transition-delay: .2s;
+
+					// hover 전에는 투명도 0으로, 안보이게
+					opacity: 0;
+
+					
 				}
 			}
 		}
 
 		// 가상 클래스 hover 추가
-		.team-item:hover{
+		.team-item:hover {
 			/* 
 			flex-item너비가 40%가 되면서, 높이가 애니메이션이 발생하면,
 			 어색한 연출이 발생될 수 있음.
@@ -73,13 +126,27 @@ body{
 			이유는, teamitem의 부모인 team에서 team-item각각에 대해 
 			 세로정렬하는 것을 넣어주지 않으면, 나머지 이미지가 세로축 가운데로 이동해주지 않기때문
 			*/
-			
-			 flex-basis: 40%;
 
-			 // hover대상 기준, 양쪽 margin 추가
-			 margin:0 50px;
-			 
-			 
+			flex-basis: 40%;
+
+			// hover대상 기준, 양쪽 margin 추가
+			margin: 0 50px;
+
+			.profile{
+				.profile-contents{
+					p{
+
+						// 기존에 max-height:0으로 없애버린 p태그의 높이를 보이게함
+						// hover전 트랜지션을 주고, 높이에 변화가 생기므로, 수직적 애니메이션이 발생
+						max-height: 300px;
+						overflow:visible;
+						opacity: 1;
+						margin-top:10px;
+					}
+				}
+			}
+
+
 		}
 	}
 }

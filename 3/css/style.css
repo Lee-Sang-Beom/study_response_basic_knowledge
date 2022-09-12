@@ -14,6 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 2vw;
 }
 .wrapper .team .team-item {
   flex-basis: 30%;
@@ -28,12 +29,36 @@ body {
   background-color: #222;
   position: relative;
 }
+.wrapper .team .team-item .profile:before {
+  content: "";
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#a6000000", GradientType=0);
+  /* IE6-9 */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 180px;
+}
+.wrapper .team .team-item .profile_red {
+  color: rgb(255, 70, 70);
+}
+.wrapper .team .team-item .profile_green {
+  color: green;
+}
+.wrapper .team .team-item .profile_purple {
+  color: violet;
+}
 .wrapper .team .team-item .profile-contents {
   position: absolute;
   left: 0;
   bottom: 0;
   padding: 10px;
-  color: white;
+  min-width: 100%;
 }
 .wrapper .team .team-item .profile-contents h2 {
   font-size: 1.6rem;
@@ -45,7 +70,15 @@ body {
   font-weight: normal;
 }
 .wrapper .team .team-item .profile-contents p {
-  display: none;
+  color: white;
+  font-size: 12px;
+  min-width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  line-height: 1.2;
+  transition: all 0.8s;
+  transition-delay: 0.2s;
+  opacity: 0;
 }
 .wrapper .team .team-item:hover {
   /* 
@@ -57,4 +90,10 @@ body {
   */
   flex-basis: 40%;
   margin: 0 50px;
+}
+.wrapper .team .team-item:hover .profile .profile-contents p {
+  max-height: 300px;
+  overflow: visible;
+  opacity: 1;
+  margin-top: 10px;
 }/*# sourceMappingURL=style.css.map */
